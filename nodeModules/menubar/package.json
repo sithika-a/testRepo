@@ -3,7 +3,6 @@
   "version": "3.0.0",
   "description": "high level way to create menubar desktop applications with atom-shell",
   "main": "index.js",
-  "private": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/maxogden/menubar.git"
