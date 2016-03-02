@@ -19,12 +19,10 @@ module.exports = function create (opts) {
   if (typeof opts.showDockIcon === 'undefined') opts.showDockIcon = false
 
   // set width/height on opts to be usable before the window is created
-   /* RichTray Communication - start*/
-
+   /* CustomTray changes - start*/
 /* Preload option added to this module to enable ipc communication with preload Scripts to tray container*/
   opts.preload = opts.preload || WindowManager.getPreloadUrl()
-
-     /* RichTray Communication - end*/
+     /* CustomTray changes - end*/
 
   opts.width = opts.width || 410
   opts.height = opts.height || 510
@@ -32,11 +30,11 @@ module.exports = function create (opts) {
 
   var menubar = new events.EventEmitter()
   menubar.app = app
-     /* RichTray Communication - start*/
+     /* CustomTray changes - start*/
 
   menubar.on('start', appReady);
     // app.on('ready', appReady);
-   /* RichTray Communication - end*/
+   /* CustomTray changes - end*/
 
 
 
@@ -144,7 +142,7 @@ module.exports = function create (opts) {
     }
 
     function hideWindow () {
-
+     //CustomTray changes
       // if (!menubar.window) return 
       /* Edited to make "setAlwaysOnTop" window action works*/
       if (!menubar.window || menubar.window.isAlwaysOnTop()) return
